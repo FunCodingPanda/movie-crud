@@ -24,7 +24,7 @@ create = (req, res, next) => {
     })
   } else {
     model.create(req.body)
-      .then((movie, error) => {
+      .then((movies, error) => {
         if(error) {
           res.status(404).json({
             status: 404,
@@ -32,7 +32,7 @@ create = (req, res, next) => {
             error: error
           })
         } else {
-          res.status(201).json({ movie })
+          res.status(201).json({ movie: movies[0] })
         }
       })
   }

@@ -12,6 +12,7 @@ create = (body) => {
     rating: body.rating,
     posterURL: body.posterURL
   })
+  .returning('*')
 }
 
 getById = (id) => {

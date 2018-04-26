@@ -37,7 +37,7 @@ update = (id, body) => {
       rating: body.rating,
       posterURL: body.posterURL
     })
-    .returning('*') // return the objects after updating
+    .returning('*') // return the objects(everything about that particular object) after updating
 }
 
 deleteById = (id) => {

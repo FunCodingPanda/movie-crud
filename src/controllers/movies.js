@@ -24,7 +24,7 @@ create = (req, res, next) => {
     })
   } else {
     model.create(req.body)
-      .then((movies, error) => {
+      .then((movie, error) => {
         if(error) {
           res.status(404).json({
             status: 404,
@@ -32,7 +32,7 @@ create = (req, res, next) => {
             error: error
           })
         } else {
-          res.status(201).end()
+          res.status(201).json({ movie })
         }
       })
   }
@@ -82,8 +82,6 @@ deleteById = (req, res, next) => {
       res.status(204).end()
     })
 }
-
-
 
 module.exports = {
   getAll,
